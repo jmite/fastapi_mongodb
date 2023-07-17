@@ -8,9 +8,9 @@ class UserBaseSchema(BaseModel):
     name: str
     email: str
     photo: str
-    role: str | None = None
-    created_at: datetime | None = None
-    updated_at: datetime | None = None
+    role: str = None
+    created_at: datetime = None
+    updated_at: datetime = None
 
     class Config:
         orm_mode = True
@@ -46,8 +46,8 @@ class PostBaseSchema(BaseModel):
     content: str
     category: str
     image: str
-    created_at: datetime | None = None
-    updated_at: datetime | None = None
+    created_at: datetime = None
+    updated_at: datetime = None
 
     class Config:
         orm_mode = True
@@ -57,7 +57,7 @@ class PostBaseSchema(BaseModel):
 
 
 class CreatePostSchema(PostBaseSchema):
-    user: ObjectId | None = None
+    user: ObjectId = None
     pass
 
 
@@ -69,11 +69,11 @@ class PostResponse(PostBaseSchema):
 
 
 class UpdatePostSchema(BaseModel):
-    title: str | None = None
-    content: str | None = None
-    category: str | None = None
-    image: str | None = None
-    user: str | None = None
+    title: str = None
+    content: str = None
+    category: str = None
+    image: str = None
+    user: str = None
 
     class Config:
         orm_mode = True
